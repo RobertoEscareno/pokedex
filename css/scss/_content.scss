@@ -1,10 +1,21 @@
 body {
     box-sizing: border-box;
-    background-image: url('../images/page-bg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #81b072 !important;
-    background-position: 0 100px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 
     main {
         padding: 0 25px;
@@ -17,10 +28,17 @@ body {
             padding: 5vw 17vw 8vw 9vw;
             margin: 0 auto;
             font-family: VT323, monospace;
-            background-image: url('../images/bg-half.gif');
-            background-repeat: no-repeat;
-            background-size: cover;
             aspect-ratio: 1 /1.345;
+            position: relative;
+            overflow: hidden;
+
+            .pokedex-bg {
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                height: 100%;
+            }
 
             .-right {
                 display: none;
@@ -70,7 +88,7 @@ body {
                     background-color: #91c192;
                     border: 2vw solid #fff;
                     border-radius: 5px;
-                    margin-top: 10vw;
+                    margin-top: 8vw;
                     font-size: 20px;
 
                     .info-wrapper {
@@ -117,7 +135,7 @@ body {
                     display: grid;
                     grid-template-columns: 1.5fr 1fr;
                     grid-template-rows: 1fr 2fr;
-                    margin-top: 4vw;
+                    margin-top: 2vw;
 
                     .search-wrapper {
 
@@ -172,7 +190,6 @@ body {
     
                         > div {
                             background-color: #222;
-                            // aspect-ratio: 1 / 1;
     
                             &.empty {
                                 background-color: transparent;
@@ -208,12 +225,12 @@ body {
                 .-left {
 
                     .screen-wrapper {
-                        margin-top: 50px;
+                        margin-top: 40px;
                         border-width: 10px;
                     }
 
                     .controls {
-                        margin-top: 20px;
+                        margin-top: 15px;
 
                         .search-wrapper {
 
@@ -230,7 +247,6 @@ body {
                 max-width: 900px;
                 justify-content: space-between;
                 aspect-ratio: 1.38 / 1;
-                background-image: url('../images/bg.gif');
                 padding-right: 40px;
                 padding-bottom: 50px;
 
