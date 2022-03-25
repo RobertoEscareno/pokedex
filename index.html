@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1>Pokedex</h1>
+        <img src="images/logo.png" alt="pokedex logo">
+    </header>
+    <main>
+        <div class="pokedex-wrapper">
+            <div class="page -left">
+                <div class="lights-wrapper">
+                    <div class="light -large -blue"></div>
+                    <div class="light -red"></div>
+                    <div class="light -yellow"></div>
+                    <div class="light -green"></div>
+                </div>
+                <div class="screen-wrapper">
+                    <div class="info-wrapper">
+                        <div class="photo-wrapper">
+                            <img src="images/empty.png" alt="empty" id="image" class="photo" height="150px">
+                        </div>
+                        <div class="info">
+                            <div class="infor-row">
+                                <span id="numberSpan" class="numberSpan">No: </span>
+                                <span id="numberValue" class="numberValue"></span>
+                            </div>
+                            <div class="infor-row">
+                                <span id="nameSpan" class="nameSpan">Name: </span>
+                                <span id="nameValue" class="nameValue"></span>
+                            </div>
+                            <div class="infor-row">
+                                <span id="typeSpan" class="typeSpan">Type: </span>
+                                <span id="typeValue" class="typeValue"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="name" placeholder="Enter Name" class="name">
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="control search-wrapper">
+                        <button onclick="fetchPokemon()" class="search">Search</button>
+                    </div>
+                    <div class="control empty">
+                    </div>
+                    <div class="control">
+                        <div class="btns">
+                            <div class="btn-red"></div>
+                            <div class="btn-blue"></div>
+                        </div>
+                        <div class="secondary-screen-wrapper">
+                            <div class="secondary-screen">
+                                <span>Abilities</span>
+                                <ul class="abilities-list">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control d-pad">
+                        <div class="empty"></div>
+                        <div class="up"></div>
+                        <div class="empty"></div>
+                        <div class="left"></div>
+                        <div class="center"></div>
+                        <div class="right"></div>
+                        <div class="empty"></div>
+                        <div class="down"></div>
+                        <div class="empty"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page -right">
+                <div class="top-screen">
+                    <div class="screen">
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-name">PS</span>
+                                <div class="progress">
+                                    <div class="progress-bar ps" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="255"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">ATK</span>
+                                <div class="progress">
+                                    <div class="progress-bar atk" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="255"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">DEF</span>
+                                <div class="progress">
+                                    <div class="progress-bar def" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="255"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">SP.ATK</span>
+                                <div class="progress">
+                                    <div class="progress-bar sp-atk" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="255"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">SP.DEF</span>
+                                <div class="progress">
+                                    <div class="progress-bar sp-def" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="255"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">SPEED</span>
+                                <div class="progress">
+                                    <div class="progress-bar speed" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="255"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="blue-controls">
+                        <div class="blue-control"></div>
+                        <div class="blue-control"></div>
+                        <div class="blue-control"></div>
+                        <div class="blue-control"></div>
+                        <div class="blue-control"></div>
+                        <div class="blue-control"></div>
+                        <div class="blue-control"></div>
+                        <div class="blue-control"></div>
+                        <div class="blue-control"></div>
+                        <div class="blue-control"></div>
+                    </div>
+                </div>
+                <div class="bottom-controls">
+                    <div class="black-btns">
+                        <div class="black-btn"></div>
+                        <div class="black-btn"></div>
+                    </div>
+                    <div class="white-btns-light">
+                        <div class="white-btns">
+                            <div class="white-btn"></div>
+                            <div class="white-btn"></div>
+                        </div>
+                        <div class="yellow-light">
+                            <div class="light"></div>
+                        </div>
+                    </div>
+                    <div class="screens">
+                        <div class="screen height-screen">
+                            <span class="height-name">Height: </span>
+                            <span class="height-value"></span>
+                        </div>
+                        <div class="screen weight-screen">
+                            <span class="weight-name">Weight: </span>
+                            <span class="weight-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <script src="js/main.js"></script>
+    </footer>
+</body>
+</html>
